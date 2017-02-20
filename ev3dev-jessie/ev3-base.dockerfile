@@ -3,6 +3,6 @@
 FROM ev3dev/debian-jessie-armel-qemu-minbase
 COPY layers/debian/ /
 COPY layers/base/ /
-RUN /brickstrap/base/run
+RUN chmod +x /brickstrap/base/run /brickstrap/base/run.d/* && /brickstrap/base/run
 COPY layers/ev3/ /
-RUN /brickstrap/ev3/run
+RUN chmod +x /brickstrap/ev3/run && /brickstrap/ev3/run
