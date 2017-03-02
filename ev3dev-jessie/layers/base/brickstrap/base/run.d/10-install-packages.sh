@@ -39,10 +39,7 @@ apt-get install --yes --force-yes --no-install-recommends \
     fake-hwclock \
     fbcat \
     fbset \
-    #firmware-atheros \
-    #firmware-linux-free \
     firmware-ralink \
-    #firmware-realtek \
     flash-kernel \
     i2c-tools \
     ifupdown \
@@ -63,10 +60,8 @@ apt-get install --yes --force-yes --no-install-recommends \
     netcat-openbsd \
     netpbm \
     ntp \
-    #parted \
     procps \
     psmisc \
-    #screen \
     ssh \
     sudo \
     tree \
@@ -74,6 +69,12 @@ apt-get install --yes --force-yes --no-install-recommends \
     vim \
     wget \
     wpasupplicant
+
+    #firmware-atheros \
+    #firmware-linux-free \
+        #firmware-realtek \
+    #parted \
+    #screen \
 
 # work around https://github.com/ev3dev/brickstrap/issues/63
 chmod u+s /bin/ping
