@@ -62,6 +62,7 @@ apt-get install --yes --force-yes --no-install-recommends \
     ntp \
     procps \
     psmisc \
+    screen \
     ssh \
     sudo \
     tree \
@@ -70,11 +71,11 @@ apt-get install --yes --force-yes --no-install-recommends \
     wget \
     wpasupplicant
 
+    # remove packages
     #firmware-atheros \
     #firmware-linux-free \
-        #firmware-realtek \
+    #firmware-realtek \
     #parted \
-    #screen \
 
 # work around https://github.com/ev3dev/brickstrap/issues/63
 chmod u+s /bin/ping
