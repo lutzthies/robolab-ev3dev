@@ -1,0 +1,3 @@
+[submodule "brickstrap"]
+	path = brickstrap
+	url = https://github.com/ev3dev/brickstrap
