@@ -44,10 +44,12 @@ image-robolab-base:
 	rm ev3dev-robolab-base.tar
 
 image-robolab-full:
-	$(call assemble_image,full)
-	rm ev3dev-robolab-full.tar
+	$(call assemble_image,robolab)
+	rm ev3dev-robolab-robolab.tar
 
 image-robolab-debug:
 	$(call assemble_image,debug)
 	# don't remove tar for debug
 	rm ev3dev-robolab-fast.tar
+
+full: docker-base docker-robolab-full image-robolab-full
