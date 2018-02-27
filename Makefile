@@ -1,6 +1,6 @@
 # run docker build command with given ev3 dockerfile
 define docker_build
-	docker build -t 7hal32/ev3dev-robolab-$(1) -f ./robolab-ev3dev-docker/ev3dev-jessie/ev3-$(1).dockerfile ./robolab-ev3dev-docker/ev3dev-jessie
+	docker build -t 7hal32/ev3dev-robolab-$(1) -f ./ev3dev-jessie/ev3-$(1).dockerfile ./ev3dev-jessie
 endef
 
 # assemble complete image of OS

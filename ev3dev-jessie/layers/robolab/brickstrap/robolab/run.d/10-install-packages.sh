@@ -19,7 +19,7 @@ apt-get install --yes --no-install-recommends \
     smbnetfs \
     sshfs \
     tmux \
-    robolab-ev3dev-startup
+    ev3-robolab-startup
 
 # create symlink for python3.6
 ln -sf /usr/bin/python3.6 /usr/bin/python3
