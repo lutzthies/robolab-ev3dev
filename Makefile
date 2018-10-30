@@ -49,7 +49,5 @@ image-robolab-full:
 
 image-robolab-debug:
 	$(call assemble_image,debug)
-	# don't remove tar for debug
-	rm ev3dev-robolab-fast.tar
 
 full: docker-base docker-robolab-full image-robolab-full

@@ -5,8 +5,8 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
 
-# get key for RoboLab package server
-wget -O - -q http://robolab.inf.tu-dresden.de:2222/gpg-key | apt-key add -
+# Get gpg-key for our RoboLab repository server
+wget -O - -q http://robolab.inf.tu-dresden.de/pub/gpg-key | apt-key add -
 apt-get update
 
 apt-get install --yes --no-install-recommends \
@@ -14,6 +14,7 @@ apt-get install --yes --no-install-recommends \
     htop \
     python3.6 \
     python3-pil \
+    python3-distutils \
     rsync \
     samba \
     smbnetfs \
@@ -21,17 +22,12 @@ apt-get install --yes --no-install-recommends \
     tmux \
     ev3-robolab-startup
 
-# create symlink for python3.6
+# Create symlink for python3.6
 ln -sf /usr/bin/python3.6 /usr/bin/python3
 
-# PIP
-
-# install python3-pip
+# Install python3-pip
 wget https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py
 
-# install packages
-# python-ev3dev
-# paho-mqtt
-# reloader
+# Install packages required
 pip3 install paho-mqtt python-ev3dev reloader
