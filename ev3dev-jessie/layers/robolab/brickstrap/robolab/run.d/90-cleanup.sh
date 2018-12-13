@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -9,23 +9,20 @@ export DEBCONF_NONINTERACTIVE_SEEN=true
 # backup files being created in the boot partition.
 rm -f /boot/flash/*.bak
 
-# remove pip as we dont want students to install other packages
-#pip3 uninstall pip --yes
+# Remove pip as we don't want students to install other packages
+pip3 uninstall pip --yes
+
+apt-get autoremove --yes
+apt-get clean
+
+# Remove cached files
+rm /get-pip.py
+rm -rf /var/lib/apt/lists/*
+
 
 ######################
 # PERFORMANCE TWEAKS
 ######################
 
-# SYSTEMD
-# disable journaling of systemd as it takes up too much memory
-rm /lib/systemd/systemd-journald && rm /lib/systemd/system/systemd-journald*
-
-# SAMBA
-# disable smbd from running by default.
-systemctl disable smbd.service
-# we really don't want this running - it causes a long timeout on boot
-systemctl mask samba-ad-dc.service
-
-# AVAHI used for .local resolution
-# suggestion: keep it
-#systemctl disable avahi-daemon.service
+# Disable journaling of systemd as it takes up too much memory
+systemctl mask systemd-journald.service

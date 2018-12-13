@@ -17,6 +17,7 @@ EOF
 apt-get update --yes
 apt-get install --yes --force-yes --no-install-recommends \
     alsa-utils \
+    apt-transport-https \
     avahi-daemon \
     base-files=8+deb8u5ev3dev1 \
     beep \
